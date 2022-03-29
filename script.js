@@ -15,6 +15,8 @@ function validez(){
     console.log(randomNumber);
         if (nbChoisi === randomNumber){
             reponse.innerHTML ="Tu as gagné!";
+            randomNumber = Math.floor(Math.random()*100);
+            tentatives = 16;
         } else if (nbChoisi > randomNumber) {
             reponse.innerHTML ="Plus bas!";
         } else if (nbChoisi < randomNumber) {
@@ -24,6 +26,8 @@ function validez(){
         nbtent.innerHTML = tentatives; 
         if (tentatives === 0){
             reponse.innerHTML ="Tu as perdu."; 
+            randomNumber = Math.floor(Math.random()*100);
             tentatives = 16;
         }
+    
 }

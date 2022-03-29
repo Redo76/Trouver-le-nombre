@@ -1,41 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trouvez le nombre</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <title>Trouvez le nombre</title>   
   <link rel="stylesheet" href="./style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    var handle = $( "#custom-handle" );
-    $( "#slider" ).slider({
-      create: function() {
-        handle.text( $( this ).slider( "value" ) );
-      },
-      slide: function( event, ui ) {
-        handle.text( ui.value );
-      }
-    });
-  } );
-  </script>
+  
 </head>
 <body>
   <h1>Trouvez le nombre entre 0 et 100</h1>
-<div id="slider">
-  <div id="custom-handle" class="ui-slider-handle"></div>
-</div>
- 
-    <div class="div_button">
-        <button>Validez votre nombre.</button>
-    </div>
- 
-    <div class="resultat">
+  <div class="tent">
+    <h2>Nombre de tentatives restantes :</h2>
+    <p class="nbtent">15</p>
+  </div>
+  <div class="div_slider">
+  <input id="slider" type="number" min="1" max="100" value="1">
+  </div>
+  <div class="div_button">
+    <button id="btn">Validez votre nombre.</button>
+  </div>
+    
+  <div id="resultat">
 
- </div>
+  </div>
+    
 </body>
 <script src="./script.js"></script>
 </html>

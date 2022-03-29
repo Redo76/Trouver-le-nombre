@@ -1,18 +1,29 @@
-let randomNumber = Math.floor(Math.random*100);
-const winningNumber = 21;
+let randomNumber = Math.floor(Math.random()*100);
+const  choosedNumber = document.querySelector('#slider');
 let tentatives = 15;
-
-function choisirNombre(){
-    document.getElementById("custom-handle")
-}
-
+let button = document.querySelector('#btn');
+let nbtent = document.querySelector('.nbtent');
+let result = document.querySelector("#resultat");
 
 
+button.addEventListener("click", validez);
 
-for (var i=0 ; i< tentatives; i++){
-    if (randomNumber === winningNumber){
-        console.log("Tu as gagné!");
-    } else {
-        console.log("Tu as perdu.");
-    }
+
+function validez(){
+    let nbChoisi = parseInt(choosedNumber.value);
+    let reponse = document.querySelector('#resultat');
+    console.log(randomNumber);
+        if (nbChoisi === randomNumber){
+            reponse.innerHTML ="Tu as gagné!";
+        } else if (nbChoisi > randomNumber) {
+            reponse.innerHTML ="Plus bas!";
+        } else if (nbChoisi < randomNumber) {
+            reponse.innerHTML ="Plus haut!";
+        }
+        tentatives--;  
+        nbtent.innerHTML = tentatives; 
+        if (tentatives === 0){
+            reponse.innerHTML ="Tu as perdu."; 
+            tentatives = 16;
+        }
 }
